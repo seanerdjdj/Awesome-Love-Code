@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>小孙同学</title>
+  <title>樊菜辉</title>
   <meta name="language" content="zh-CN">
-  <meta name="title" content="小孙同学">
+  <meta name="title" content="樊菜辉">
   <meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
   <meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
   <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png">
@@ -55,11 +55,11 @@
           <li onclick="oy_show_benefit()">No&nbsp;&nbsp;✖</li>
         </ul>
         <div id="div_oy_note" onclick="oy_hide_note()">
-          <img src="images/emoji_kelian.jpg" alt="" /><br />请告诉我Yes！
+          <img src="images/emoji_kelian.jpg" alt="" /><br />请不要选Yes！
           <div id="div_oy_note_close">✖</div>
         </div>
         <div id="div_oy_yes">
-          <img src="images/emoji_bixin.jpg" alt="" /><br />太好了！哈哈~
+          <img src="images/emoji_bixin.jpg" alt="" /><br />太好啦!
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@
     console.log("theme ->" + theme);
     var theme_content = {
       pure_words_content:
-        "遇见你，是我所有美好故事的开始，看见你的第一眼，上帝就在我耳边说了四个字，在劫难逃!\n你的过去我来不及参与，你的未来我一定奉陪到底！\n我爱你！<um style='color: #F44336;'>💕</um>",
+        "商丘师范学院睢阳校区第一帅哥樊菜辉前来报道\n看什么看，嘘什么嘘，在看把你眼睛挖掉，再嘘把你舌头割掉\n我懂了，你暗恋我！<um style='color: #F44336;'>💕</um>",
       typed_bool: "typed_y",
       cursor_char: "cursor_heart",
       bg_style_pure_words: "bg_opacity",
@@ -166,12 +166,12 @@
     };
     console.log(record_json);
 
-    var main_title = "我喜欢你❤️";
+    var main_title = "暗恋我❤️";
 
     // console.log(main_title);
     if (main_title == "" || main_title == "null") {
       //允许标题为空
-      document.title = "慢慢喜欢你";
+      document.title = "一直暗恋我";
     }
 
     var window_height = $(window).height();
@@ -206,7 +206,7 @@
         theme_content["cursor_char"] //设置打字光标的样式
         ) {
           case "cursor_heart":
-            str_cursorChar = '<um style="color: #F44336;">❤</um>';
+            str_cursorChar = '<um style="color: #F44336;">暗恋</um>';
             break;
           case "cursor_sub":
             str_cursorChar = "_";
@@ -225,7 +225,7 @@
         }
       } else {
         //处理全新作品，默认显示打字效果
-        str_cursorChar = "❤";
+        str_cursorChar = "暗恋我";
       }
       //判断用户有没有选择打字效果
       if (
