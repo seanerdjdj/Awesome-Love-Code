@@ -1,78 +1,78 @@
-﻿<!doctype html>
-<html>
+﻿<！doctype html>
+<超文本标记语言>
 
-<head>
-	<meta charset="utf-8">
-	<title>我爱你</title>
-	<meta name="language" content="zh-CN">
-	<meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
-	<meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
-	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png">
+<头>
+	<元字符集="utf-8">
+	<标题>杀了你</标题>
+	<元姓名="你好" 内容="zh-CN">
+	<元姓名="github" 内容="https://github.com/sun0225SUN/Awesome-Love-Code">
+	<元姓名="描述" 内容="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦！">
+	<链接rel="图标" 类型="图像/x图标" href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png">
 
-	<style>
-		html,
-		body {
-			margin: 0px;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			background: #000;
+	<风格>
+超文本标记语言，
+身体{
+			边缘:0PX;
+			宽度:100%;
+			高度:100%;
+			溢出:隐藏的;
+			背景: #000;
 		}
-	</style>
+	</风格>
 
-</head>
+</头>
 
-<body>
-	<canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
-	<canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
-	<div class="overlay">
-		<div class="tabs">
-			<div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span
-					class="tabs-label">Share</span></div>
+<身体>
+	<帆布身份标识="画布" 风格="位置:绝对的;宽度:100%;高度:100%;Z指数:8888"></帆布>
+	<帆布风格="位置:绝对的;宽度:100%;高度:100%;Z指数:9999" 班级="画布"></帆布>
+	<div班级="覆盖">
+		<div班级="标签">
+			<div班级="tabs-labels"><跨度班级="tabs-label">命令</跨度><跨度班级="tabs-label">信息</跨度><跨度
+					班级="tabs-label">分享</跨度></div>
 
-			<div class="tabs-panels">
-				<ul class="tabs-panel commands">
-				</ul>
+			<div班级="制表符-面板">
+				<UL班级="tabs-panel命令">
+				</UL>
 			</div>
 		</div>
 	</div>
-	<script>
-		function initVars() {
+	<脚本>
+		功能 initVars() {
 
-			pi = Math.PI;
-			ctx = canvas.getContext("2d");
-			canvas.width = canvas.clientWidth;
-			canvas.height = canvas.clientHeight;
-			cx = canvas.width / 2;
-			cy = canvas.height / 2;
-			playerZ = -25;
-			playerX = playerY = playerVX = playerVY = playerVZ = pitch = yaw = pitchV = yawV = 0;
-			scale = 600;
-			seedTimer = 0; seedInterval = 5, seedLife = 100; gravity = .02;
-			seeds = new Array();
-			sparkPics = new Array();
-			s = "https://cantelope.org/NYE/";
-			for (i = 1; i <= 10; ++i) {
-				sparkPic = new Image();
-				sparkPic.src = s + "spark" + i + ".png";
-				sparkPics.push(sparkPic);
+Pi=数学。Pi;
+CTX=帆布。getContext("2d");
+帆布。宽度=画布。clientWidth;
+帆布。高度=画布。clientHeight;
+CX=画布。宽度/2;
+Cy=画布。高度/2;
+Playerz=-25;
+playerX=playery=playerVX=playerVY=playerVZ=pitch=yaw=pitchV=yawV=0;
+比例=600;
+seedTimer=0；seedInterval=5，seedLife=100；重力=.02;
+种子=新的数组();
+sparkPics=新的数组();
+s="https://cantelope.org/NYE/";
+			为 (I=1；i<=10；++i) {
+sparkPic=新的图像();
+sparkPic。src=s+"火花"+i+".png";
+sparkPics。推(sparkPic);
 			}
-			sparks = new Array();
-			pow1 = new Audio(s + "pow1.ogg");
-			pow2 = new Audio(s + "pow2.ogg");
-			pow3 = new Audio(s + "pow3.ogg");
-			pow4 = new Audio(s + "pow4.ogg");
-			frames = 0;
+火花=新的数组();
+power1=新的音频(s+"pow1.ogg");
+POW2=新的音频(s+"pow2.ogg");
+power3=新的音频(s+"pow3.ogg");
+power4=新的音频(s+"power4.ogg");
+帧数=0;
 		}
 
-		function rasterizePoint(x, y, z) {
+		功能 rasterizePoint(x,y,z) {
 
-			var p, d;
-			x -= playerX;
-			y -= playerY;
-			z -= playerZ;
-			p = Math.atan2(x, z);
-			d = Math.sqrt(x * x + z * z);
+			var p,d;
+X-=playerX；
+y-=游戏；
+Z-=Playerz；
+P=数学。atan2(X，z);
+D=数学。sqrt(X*x+z*z);
 			x = Math.sin(p - yaw) * d;
 			z = Math.cos(p - yaw) * d;
 			p = Math.atan2(y, z);
